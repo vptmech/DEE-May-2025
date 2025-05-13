@@ -1,0 +1,8 @@
+# Production domains
+User-agent: *
+Allow: /
+
+# Development/staging domains
+User-agent: *
+Disallow: /
+Host: deefiresolutions.com.au
