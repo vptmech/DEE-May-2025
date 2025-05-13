@@ -69,7 +69,7 @@ const Header: React.FC = () => {
               <img 
                 src="/DEE Final Logo.png" 
                 alt="DEE" 
-                className={`transition-all duration-300 ${isScrolled ? 'h-15' : 'h-17'}`}
+                className={`transition-all duration-300 ${isScrolled ? 'h-12' : 'h-20'} w-auto`}
                 onError={(e) => {
                   e.currentTarget.src = 'https://placehold.co/200x80/transparent/FFFFFF?text=DEE&font=montserrat-bold&color=F26522,0099D8&flame=0099D8,F26522';
                 }}
