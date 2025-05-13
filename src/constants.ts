@@ -110,7 +110,7 @@ export const industries: Industry[] = [
   {
     title: 'Mining & Resources',
     description: 'Specialized fire suppression systems for heavy mining equipment and facilities, designed to withstand harsh environments.',
-    image: 'https://images.pexels.com/photos/2101187/pexels-photo-2101187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    image: '/ex37.jpg',
     altText: 'Mining equipment with fire suppression systems'
   },
   {
