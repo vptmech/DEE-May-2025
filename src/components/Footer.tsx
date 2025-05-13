@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <img 
-              src="/src/assets/logo.png" 
+              src="/DEE Final Logo.png" 
               alt="DEE" 
               className="h-12 mb-4"
               onError={(e) => {
