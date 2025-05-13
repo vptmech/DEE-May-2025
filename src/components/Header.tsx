@@ -67,7 +67,7 @@ const Header: React.FC = () => {
               className="flex items-center"
             >
               <img 
-                src="/src/assets/logo.png" 
+                src="/DEE Final Logo.png" 
                 alt="DEE" 
                 className={`transition-all duration-300 ${isScrolled ? 'h-10' : 'h-12'}`}
                 onError={(e) => {
