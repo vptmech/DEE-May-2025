@@ -6,8 +6,8 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const handleNavigation = (path: string) => {
-    // If it's a hash link
-    if (path.startsWith('#')) {
+    // If it's a hash link on the home page
+    if (path.startsWith('#') && window.location.pathname === '/') {
       const element = document.getElementById(path.substring(1));
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => handleNavigation('#hydraulic')}
+                  onClick={() => handleNavigation('/services/hydraulic-fire-suppression')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
                   Hydraulic & Fire Suppression
@@ -94,15 +94,15 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('#mobile')}
+                  onClick={() => handleNavigation('/services/fluid-power-lubrication')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Mobile Maintenance
+                  Fluid Power & Lubrication
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('#safety')}
+                  onClick={() => handleNavigation('/services/safety-testing')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
                   Safety & Testing
@@ -110,10 +110,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('#contact')}
+                  onClick={() => handleNavigation('/services/mobile-maintenance')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Book an Inspection
+                  Mobile Maintenance
                 </button>
               </li>
             </ul>
