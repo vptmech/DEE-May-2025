@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             <img 
               src="/DEE Final Logo.png" 
               alt="DEE" 
-              className="h-12 mb-4"
+              className="h-20 mb-4"
               onError={(e) => {
                 e.currentTarget.src = 'https://placehold.co/200x80/transparent/FFFFFF?text=DEE&font=montserrat-bold&color=F26522,0099D8&flame=0099D8,F26522';
               }}
