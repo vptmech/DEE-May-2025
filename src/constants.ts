@@ -77,7 +77,7 @@ export const services: Service[] = [
       'Hydraulic system design',
       'Oil analysis & testing',
       'Grease lubrication systems',
-      'System optimization',
+      'System optimisation',
       'Preventive maintenance'
     ]
   },
@@ -109,13 +109,13 @@ export const services: Service[] = [
 export const industries: Industry[] = [
   {
     title: 'Mining & Resources',
-    description: 'Specialized fire suppression systems for heavy mining equipment and facilities, designed to withstand harsh environments.',
+    description: 'Specialised fire suppression systems for heavy mining equipment and facilities, designed to withstand harsh environments.',
     image: '/ex37.jpg',
     altText: 'Mining equipment with fire suppression systems'
   },
   {
     title: 'Transport',
-    description: 'Fleet protection systems for trucks and loaders, minimizing downtime and risk.',
+    description: 'Fleet protection systems for trucks and loaders, minimising downtime and risk.',
     image: 'https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     altText: 'Transport vehicles with fire safety equipment'
   },
