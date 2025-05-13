@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const config = {
-  runtime: 'nodejs18.x',
+  runtime: 'edge',
 };
 
 export default async function handler(req: Request): Promise<Response> {
@@ -27,7 +27,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   try {
     const data = await resend.emails.send({
-      from: 'Your Name <you@yourdomain.com>', // replace with verified domain
+      from: 'Your Name <you@yourdomain.com>',
       to: 'your@email.com',
       subject: 'New Contact Form Submission',
       html: `
