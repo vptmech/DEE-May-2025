@@ -10,7 +10,7 @@ type FAQItem = {
 const faqs: FAQItem[] = [
   {
     question: "What industries do you service?",
-    answer: "We specialize in providing fire suppression and fluid solutions for mining & resources, transport, and industrial facilities. Our services are tailored to meet the unique challenges of each sector."
+    answer: "We specialise in providing fire suppression and fluid solutions for mining & resources, transport, and industrial facilities. Our services are tailored to meet the unique challenges of each sector."
   },
   {
     question: "Are your systems compliant with Australian Standards?",
@@ -22,7 +22,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What types of vehicles do you service?",
-    answer: "We service both heavy and light vehicles across various industries. This includes mining equipment, transport trucks, and industrial machinery, providing customized fire suppression solutions for each type."
+    answer: "We service both heavy and light vehicles across various industries. This includes mining equipment, transport trucks, and industrial machinery, providing customised fire suppression solutions for each type."
   },
   {
     question: "How often should fire suppression systems be serviced?",
