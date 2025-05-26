@@ -1,30 +1,24 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req: Request) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
-      status: 405,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  const { name, email, phone, service, message, website } = req.body;
+
+  // Honeypot check (anti-spam)
+  if (website) {
+    return res.status(200).json({ success: true });
+  }
+
+  // Artificial delay to deter bots
+  await new Promise(resolve => setTimeout(resolve, 500));
+
   try {
-    const { name, email, phone, service, message, website } = await req.json();
-
-    // Honeypot check
-    if (website) {
-      // Silently succeed for bot submissions
-      return new Response(JSON.stringify({ success: true }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
-    // Add artificial delay to deter bots
-    await new Promise(resolve => setTimeout(resolve, 500));
-
     await resend.emails.send({
       from: 'DEE Website <noreply@deefiresolutions.com.au>',
       to: 'admin@deefiresolutions.com.au',
@@ -38,15 +32,9 @@ export default async function handler(req: Request) {
       `,
     });
 
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return res.status(200).json({ success: true });
   } catch (error) {
     console.error('Email sending failed:', error);
-    return new Response(JSON.stringify({ error: 'Failed to send email' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return res.status(500).json({ error: 'Failed to send email' });
   }
 }
