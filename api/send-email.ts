@@ -1,34 +1,23 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const config = {
-  runtime: 'edge',
-};
-
-export default async function handler(req: Request): Promise<Response> {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method Not Allowed' }), {
-      status: 405,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const body = await req.json();
-  const { name, email, mobile, company, suburb, message } = body;
+  const { name, email, mobile, company, suburb, message } = req.body;
 
   if (!name || !email || !message) {
-    return new Response(JSON.stringify({ error: 'Missing required fields' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return res.status(400).json({ error: 'Missing required fields' });
   }
 
   try {
     const data = await resend.emails.send({
-      from: 'Your Name <you@yourdomain.com>',
-      to: 'your@email.com',
+      from: 'DEE Fire Website <noreply@deefiresolutions.com.au>',
+      to: 'youremail@example.com', // 🔁 Replace with your real recipient
       subject: 'New Contact Form Submission',
       html: `
         <p><strong>Name:</strong> ${name}</p>
@@ -40,15 +29,9 @@ export default async function handler(req: Request): Promise<Response> {
       `,
     });
 
-    return new Response(JSON.stringify({ success: true, data }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return res.status(200).json({ success: true, data });
   } catch (error) {
     console.error('Email sending failed:', error);
-    return new Response(JSON.stringify({ error: 'Email sending failed' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return res.status(500).json({ error: 'Email sending failed' });
   }
 }
