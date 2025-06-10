@@ -16,7 +16,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const data = await resend.emails.send({
-      from: 'DEE Fire Website <noreply@deefiresolutions.com.au>',
+      from: 'DEE Fire Website <noreply@send.deefiresolutions.com.au>',
       to: 'admin@deefiresolutions.com.au', // 🔁 Replace with your real recipient
       subject: 'New Contact Form Submission',
       html: `
