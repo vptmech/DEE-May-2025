@@ -20,8 +20,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     await resend.emails.send({
-      from: 'DEE Website <noreply@deefiresolutions.com.au>',
-      to: 'admin@deefiresolutions.com.au',
+      from: 'DEE Website <noreply@deefiresolutions.com>',
+      to: 'admin@deefiresolutions.com',
       subject: 'New Contact Form Submission',
       html: `
         <p><strong>Name:</strong> ${name}</p>
