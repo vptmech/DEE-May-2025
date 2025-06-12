@@ -23,8 +23,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Mobile:</strong> ${mobile}</p>
-        <p><strong>Company:</strong> ${company}</p>
-        <p><strong>Suburb:</strong> ${suburb}</p>
         <p><strong>Message:</strong><br>${message}</p>
       `,
     });
