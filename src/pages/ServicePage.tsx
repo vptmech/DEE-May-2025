@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { services } from '../constants';
 import Section from '../components/layout/Section';
 import Button from '../components/ui/Button';
@@ -7,7 +7,13 @@ import { ArrowLeft } from 'lucide-react';
 
 const ServicePage: React.FC = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const service = services.find(s => s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') === id);
+
+  const handleContactNavigation = () => {
+    navigate('/contact');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   if (!service) {
     return (
