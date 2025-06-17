@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';               // ← added
 import Container from './layout/Container';
 import { companyInfo } from '../constants';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();                             // ← added
 
   const handleNavigation = (path: string) => {
     // If it's a hash link on the home page
@@ -13,8 +15,7 @@ const Footer: React.FC = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // For other pages, navigate and scroll to top
-      window.location.href = path;
+      navigate(path);                                         // ← changed
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
@@ -25,12 +26,13 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <img 
-              src="/DEE Final Logo.png" 
-              alt="DEE" 
+            <img
+              src="/DEE Final Logo.png"
+              alt="DEE"
               className="h-12 mb-4"
               onError={(e) => {
-                e.currentTarget.src = 'https://placehold.co/200x80/transparent/FFFFFF?text=DEE&font=montserrat-bold&color=F26522,0099D8&flame=0099D8,F26522';
+                e.currentTarget.src =
+                  'https://placehold.co/200x80/transparent/FFFFFF?text=DEE&font=montserrat-bold&color=F26522,0099D8&flame=0099D8,F26522';
               }}
             />
             <p className="text-gray-300 mb-4">
@@ -86,31 +88,31 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => handleNavigation('https://www.deefiresolutions.com/services/hydraulic-fire-suppression')}
+                  onClick={() => handleNavigation('/services/hydraulic-fire-suppression')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Hydraulic & Fire Suppression
+                  Hydraulic &amp; Fire Suppression
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('https://www.deefiresolutions.com/services/fluid-power-lubrication')}
+                  onClick={() => handleNavigation('/services/fluid-power-lubrication')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Fluid Power & Lubrication
+                  Fluid Power &amp; Lubrication
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('https://www.deefiresolutions.com/services/safety-testing')}
+                  onClick={() => handleNavigation('/services/safety-testing')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
-                  Safety & Testing
+                  Safety &amp; Testing
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('https://www.deefiresolutions.com/services/mobile-maintenance')}
+                  onClick={() => handleNavigation('/services/mobile-maintenance')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
                   Mobile Maintenance
@@ -126,10 +128,16 @@ const Footer: React.FC = () => {
               &copy; {currentYear} {companyInfo.name}. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
-              <button onClick={() => handleNavigation('/privacy')} className="text-gray-400 hover:text-gray-300 text-sm">
+              <button
+                onClick={() => handleNavigation('/privacy')}
+                className="text-gray-400 hover:text-gray-300 text-sm"
+              >
                 Privacy Policy
               </button>
-              <button onClick={() => handleNavigation('/terms')} className="text-gray-400 hover:text-gray-300 text-sm">
+              <button
+                onClick={() => handleNavigation('/terms')}
+                className="text-gray-400 hover:text-gray-300 text-sm"
+              >
                 Terms of Service
               </button>
             </div>
