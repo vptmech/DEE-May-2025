@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => handleNavigation('/services/hydraulic-fire-suppression')}
+                  onClick={() => handleNavigation('https://www.deefiresolutions.com/services/hydraulic-fire-suppression')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
                   Hydraulic & Fire Suppression
@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('/services/fluid-power-lubrication')}
+                  onClick={() => handleNavigation('https://www.deefiresolutions.com/services/fluid-power-lubrication')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
                   Fluid Power & Lubrication
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('/services/safety-testing')}
+                  onClick={() => handleNavigation('https://www.deefiresolutions.com/services/safety-testing')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
                   Safety & Testing
@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('/services/mobile-maintenance')}
+                  onClick={() => handleNavigation('https://www.deefiresolutions.com/services/mobile-maintenance')}
                   className="text-gray-300 hover:text-primary transition-colors"
                 >
                   Mobile Maintenance
