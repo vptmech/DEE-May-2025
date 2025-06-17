@@ -77,7 +77,7 @@ const ServicePage: React.FC = () => {
             <p className="text-dark-500 mb-6">
               Contact our team to discuss your specific requirements and how we can help protect your assets.
             </p>
-            <Button href="https://www.deefiresolutions.com/contact" variant="primary">
+            <Button onClick={handleContactNavigation} variant="primary">
               Request a Quote
             </Button>
           </div>
