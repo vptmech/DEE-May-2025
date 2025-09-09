@@ -14,7 +14,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Are your systems compliant with Australian Standards?",
-    answer: "Yes, all our fire suppression systems meet or exceed AS5062 requirements for mobile and transportable equipment. Our maintenance practices follow AS1851 standards for routine service of fire protection systems."
+    answer: "Yes, all our fire suppression systems meet or exceed AS5062 requirements for mobile and transportable equipment. Our maintenance practices follow AS5062 standards for routine service of fire protection systems."
   },
   {
     question: "Do you offer emergency services?",
@@ -26,7 +26,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How often should fire suppression systems be serviced?",
-    answer: "We recommend regular maintenance following AS1851 standards, which includes monthly inspections, six-monthly detailed checks, and annual comprehensive evaluations to ensure optimal system performance."
+    answer: "We recommend regular maintenance following AS5062 standards, which includes monthly inspections, six-monthly detailed checks, and annual comprehensive evaluations to ensure optimal system performance."
   },
   {
     question: "What makes your fire suppression systems different?",
