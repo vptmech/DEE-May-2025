@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl"></div>
               <img
-                src="/images/hero-side.png"
+                src="/hero-section.png"
                 alt="Industrial fire suppression technician inspecting equipment"
                 className="rounded-2xl shadow-2xl w-full object-cover h-[600px]"
               />
