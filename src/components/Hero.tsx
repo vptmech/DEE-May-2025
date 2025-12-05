@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center bg-neutral-900">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('https://images.pexels.com/photos/1643116/pexels-photo-1643116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
@@ -36,10 +36,10 @@ const Hero: React.FC = () => {
                 Get Expert Solutions
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
-                href="#services" 
-                variant="outline" 
-                size="lg" 
+              <Button
+                href="#services"
+                variant="outline"
+                size="lg"
                 className="text-white border-white/20"
               >
                 Learn More
@@ -62,12 +62,12 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="hidden lg:block">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl"></div>
               <img
-                src="public/hero-section.png"
+                src="/images/hero-side.png"
                 alt="Industrial fire suppression technician inspecting equipment"
                 className="rounded-2xl shadow-2xl w-full object-cover h-[600px]"
               />
